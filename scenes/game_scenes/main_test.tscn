@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://nrj5dl1rymfi"]
+
+[ext_resource type="PackedScene" uid="uid://bykxo2lthnfm6" path="res://scenes/entity_scenes/player.tscn" id="1_rko00"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_x0eed"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_s7d26"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_d3j5s"]
+
+[node name="MainTest" type="Node3D" unique_id=325605107]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=3157295]
+transform = Transform3D(20, 0, 0, 0, 1, 0, 0, 0, 20, 0, -1, 0)
+collision_layer = 4
+collision_mask = 0
+physics_material_override = SubResource("PhysicsMaterial_x0eed")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1967205184]
+shape = SubResource("BoxShape3D_s7d26")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=240730536]
+mesh = SubResource("BoxMesh_d3j5s")
+
+[node name="player" parent="." unique_id=2117555441 instance=ExtResource("1_rko00")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.41321623, 0)
+
+[node name="CameraPivot" type="Marker3D" parent="player" unique_id=14022889]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.730854, 3.9008636)
+
+[node name="Camera3D" type="Camera3D" parent="player/CameraPivot" unique_id=1885345082]
+transform = Transform3D(1, 0, 0, 0, 0.7185513, 0.69547397, 0, -0.69547397, 0.7185513, 0, 0, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1466339472]
+transform = Transform3D(0.4756549, 0.5430302, -0.6920048, -3.0258658e-09, 0.78669804, 0.61733806, 0.87963194, -0.29363984, 0.37419686, -8.001326, 5.618789, 1.2285929)
