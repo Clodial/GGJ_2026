@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://nrj5dl1rymfi"]
+
+[ext_resource type="PackedScene" uid="uid://bykxo2lthnfm6" path="res://scenes/entity_scenes/player.tscn" id="1_rko00"]
+[ext_resource type="Script" uid="uid://dh2b7qtgi6ih3" path="res://src/block_layers.gd" id="2_x0eed"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_x0eed"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_s7d26"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_rko00"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rko00"]
+albedo_color = Color(0.012617188, 0.012617188, 0.012617188, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_x0eed"]
+material = SubResource("StandardMaterial3D_rko00")
+
+[node name="MainTest" type="Node3D" unique_id=325605107]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=3157295]
+transform = Transform3D(20, 0, 0, 0, 1, 0, 0, 0, 20, 0, -1, 0)
+collision_layer = 4
+collision_mask = 0
+physics_material_override = SubResource("PhysicsMaterial_x0eed")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1967205184]
+shape = SubResource("BoxShape3D_s7d26")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=240730536]
+mesh = SubResource("PlaneMesh_rko00")
+
+[node name="player" parent="." unique_id=2117555441 instance=ExtResource("1_rko00")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.41321623, 0)
+
+[node name="CameraPivot" type="Marker3D" parent="player" unique_id=14022889]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.730854, 3.9008636)
+
+[node name="Camera3D" type="Camera3D" parent="player/CameraPivot" unique_id=1885345082]
+transform = Transform3D(1, 0, 0, 0, 0.7185513, 0.69547397, 0, -0.69547397, 0.7185513, 0, 1.3896685, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="player" unique_id=1466339472]
+transform = Transform3D(0.80369073, 0.21270281, -0.5557326, 0, 0.93393034, 0.35745537, 0.5950473, -0.2872836, 0.75059116, -2.3356647, 6.063675, 0)
+
+[node name="block layers" type="Node3D" parent="player" unique_id=765010059]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.730854, 3.9008636)
+script = ExtResource("2_x0eed")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="player/block layers" unique_id=1886417113]
+transform = Transform3D(-4.371139e-07, -1, 0, 10, -4.371139e-08, 0, 0, 0, 8, -4, 2.5051365, 0)
+mesh = SubResource("BoxMesh_x0eed")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="player/block layers" unique_id=791034910]
+transform = Transform3D(1.9106854e-14, 4.371139e-08, 8, 10, -4.371139e-08, 0, 4.371139e-07, 1, -3.496911e-07, 0, 2.505, 4)
+mesh = SubResource("BoxMesh_x0eed")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="player/block layers" unique_id=870815133]
+transform = Transform3D(-4.371139e-07, -1, 0, 10, -4.371139e-08, 0, 0, 0, 8, 4, 2.505, 0)
+mesh = SubResource("BoxMesh_x0eed")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="player/block layers" unique_id=1992751920]
+transform = Transform3D(1.9106854e-14, 4.371139e-08, 8, 10, -4.371139e-08, 0, 4.371139e-07, 1, -3.496911e-07, 0, 2.505, -4)
+mesh = SubResource("BoxMesh_x0eed")
+
+[node name="PSXLayer" type="CanvasLayer" parent="." unique_id=1962853651]
