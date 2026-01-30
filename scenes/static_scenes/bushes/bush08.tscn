@@ -1,0 +1,14 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" path="res://assets/tree_pack_1.1/models/bush08.fbx" id="1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1"]
+size = Vector3(8.434692, 7.3215485, 8.295898)
+
+[node name="Node3D" type="StaticBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.065752506, 3.7455215, 0.2518921)
+shape = SubResource("BoxShape3D_1")
+
+[node name="bush08" parent="." instance=ExtResource("1")]

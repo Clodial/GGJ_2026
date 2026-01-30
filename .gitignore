@@ -1,3 +1,10 @@
 # Godot 4+ specific ignores
 .godot/
 /android/
+
+# OS/editor files
+.DS_Store
+.vscode/
+
+# Local tools (optional)
+tools/
