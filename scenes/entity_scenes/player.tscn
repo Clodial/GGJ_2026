@@ -4,15 +4,19 @@
 
 [sub_resource type="BoxMesh" id="BoxMesh_3vyb7"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1x0ge"]
+
 [sub_resource type="SphereShape3D" id="SphereShape3D_g2els"]
 
 [node name="player" type="CharacterBody3D" unique_id=2117555441]
+collision_mask = 2
 script = ExtResource("1_3vyb7")
 
 [node name="pivot" type="Node3D" parent="." unique_id=1746906775]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="pivot" unique_id=999064535]
 mesh = SubResource("BoxMesh_3vyb7")
+surface_material_override/0 = SubResource("StandardMaterial3D_1x0ge")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=346046991]
 shape = SubResource("SphereShape3D_g2els")

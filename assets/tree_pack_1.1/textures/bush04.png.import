@@ -3,16 +3,11 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c6axykn1wk4mj"
-path.s3tc="res://.godot/imported/bush04.png-04c73edfa05fc9b26d93b5c6041a263a.s3tc.ctex"
-metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
-}
+valid=false
 
 [deps]
 
 source_file="res://assets/tree_pack_1.1/textures/bush04.png"
-dest_files=["res://.godot/imported/bush04.png-04c73edfa05fc9b26d93b5c6041a263a.s3tc.ctex"]
 
 [params]
 

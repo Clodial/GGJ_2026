@@ -12,6 +12,12 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	var direction = Vector3.ZERO
 	
+	var horizontal_direction = Input.get_axis("move_left", "move_right")
+	var vertical_direction = Input.get_axis("move_up", "move_down")
+	
+	if horizontal_direction:
+		velocity.x = speed * horizontal_direction
+	
 	#basic input movement
 	if Input.is_action_pressed("move_right"):
 		direction.x += 1

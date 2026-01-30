@@ -3,16 +3,11 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://6flfohuomewr"
-path.s3tc="res://.godot/imported/tree31.png-d4c2ea1f5496bac3c876529a5c974256.s3tc.ctex"
-metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
-}
+valid=false
 
 [deps]
 
 source_file="res://assets/tree_pack_1.1/textures/tree31.png"
-dest_files=["res://.godot/imported/tree31.png-d4c2ea1f5496bac3c876529a5c974256.s3tc.ctex"]
 
 [params]
 
