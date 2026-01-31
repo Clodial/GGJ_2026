@@ -2,12 +2,17 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ito3270c1jbv"
-valid=false
+uid="uid://bnv6btqdik0cr"
+path.s3tc="res://.godot/imported/bush2keep.png-027a6e5a535723719f64ef0735e3abcb.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
 
 [deps]
 
-source_file="res://assets/tree_pack_1.1/textures/bush01.png"
+source_file="res://assets/tree_pack_1.1/textures/bush2keep.png"
+dest_files=["res://.godot/imported/bush2keep.png-027a6e5a535723719f64ef0735e3abcb.s3tc.ctex"]
 
 [params]
 

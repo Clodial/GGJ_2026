@@ -2,12 +2,17 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ito3270c1jbv"
-valid=false
+uid="uid://bkluo1u188bx0"
+path.s3tc="res://.godot/imported/foliage.png-2ffa137a6f085c76818fab30f1b4c7f7.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
 
 [deps]
 
-source_file="res://assets/tree_pack_1.1/textures/bush01.png"
+source_file="res://assets/foliage.png"
+dest_files=["res://.godot/imported/foliage.png-2ffa137a6f085c76818fab30f1b4c7f7.s3tc.ctex"]
 
 [params]
 
