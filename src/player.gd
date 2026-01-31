@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-@export var speed = 14
+@export var speed = 4
 
 var target_velocity = Vector3.ZERO
 

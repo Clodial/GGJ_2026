@@ -1,10 +1,17 @@
 [gd_scene format=3 uid="uid://cuw5q53ek5npe"]
 
+[ext_resource type="Script" uid="uid://bn8pdgrkiqf3i" path="res://src/base_enemy.gd" id="1_sf7sy"]
+
 [sub_resource type="CylinderMesh" id="CylinderMesh_frcck"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_frcck"]
 
-[node name="BaseEnemy" type="Area3D" unique_id=1079876297]
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_sf7sy"]
+
+[node name="BaseEnemy" type="CharacterBody3D" unique_id=1760867461 groups=["enemy"]]
+collision_layer = 2
+collision_mask = 5
+script = ExtResource("1_sf7sy")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=59333006]
 transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, 0, 0, 0)
@@ -13,3 +20,9 @@ mesh = SubResource("CylinderMesh_frcck")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=982403654]
 transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("CylinderShape3D_frcck")
+
+[node name="radiusShape" type="ShapeCast3D" parent="." unique_id=1676361283]
+transform = Transform3D(10, 0, 0, 0, 0.1, 0, 0, 0, 10, 0, 0, 0)
+shape = SubResource("CylinderShape3D_sf7sy")
+
+[connection signal="child_entered_tree" from="radiusShape" to="." method="_on_radius_shape_child_entered_tree"]

@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://nrj5dl1rymfi"]
 
-[ext_resource type="Texture2D" uid="uid://bkluo1u188bx0" path="res://assets/foliage.png" id="1_d3j5s"]
+[ext_resource type="Texture2D" uid="uid://cjmqgs8o0arkx" path="res://assets/main_floor.png" id="1_d3j5s"]
 [ext_resource type="PackedScene" uid="uid://bykxo2lthnfm6" path="res://scenes/entity_scenes/player.tscn" id="1_rko00"]
 [ext_resource type="Script" uid="uid://dh2b7qtgi6ih3" path="res://src/block_layers.gd" id="2_x0eed"]
 [ext_resource type="Material" uid="uid://bjsq01fh6a6hp" path="res://assets/tree_pack_1.1/materials/bush01.001.material" id="3_s7d26"]
+[ext_resource type="PackedScene" uid="uid://cuw5q53ek5npe" path="res://scenes/entity_scenes/enemy_scenes/base_enemy.tscn" id="4_dtm67"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_x0eed"]
 
@@ -48,6 +49,7 @@ transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="player" unique_id=1466339472]
 transform = Transform3D(0.80369073, 0.21270281, -0.5557326, 0, 0.93393034, 0.35745537, 0.5950473, -0.2872836, 0.75059116, -2.3356647, 6.063675, 0)
+light_energy = 0.123
 
 [node name="block layers" type="Node3D" parent="player" unique_id=765010059]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
@@ -73,7 +75,7 @@ mesh = SubResource("BoxMesh_x0eed")
 
 [node name="collision_block_1" type="StaticBody3D" parent="test_collision_blocks" unique_id=904386090]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.841622, 0, 0)
-collision_layer = 2
+collision_layer = 4
 collision_mask = 0
 physics_material_override = SubResource("PhysicsMaterial_s7d26")
 
@@ -83,3 +85,6 @@ surface_material_override/0 = ExtResource("3_s7d26")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="test_collision_blocks/collision_block_1" unique_id=1609282259]
 shape = SubResource("BoxShape3D_d3j5s")
+
+[node name="BaseEnemy" parent="." unique_id=1760867461 instance=ExtResource("4_dtm67")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.358156, 0, -7.4996243)
