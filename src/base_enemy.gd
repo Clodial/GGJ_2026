@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 var shape_cast
-var speed = 3
+var speed = 2
 var follow_player = false
 var player = null
 var direction
