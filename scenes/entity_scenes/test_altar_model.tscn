@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bm5sljndgosv2"]
+
+[ext_resource type="PackedScene" uid="uid://b5lcrfpld380u" path="res://assets/test-altar-model.fbx" id="1_3q2mh"]
+
+[node name="test-altar-model" unique_id=263653517 instance=ExtResource("1_3q2mh")]
+
+[node name="Light" parent="." index="2" unique_id=2106040603]
+visible = false

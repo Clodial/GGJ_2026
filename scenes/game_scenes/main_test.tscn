@@ -5,7 +5,8 @@
 [ext_resource type="Script" uid="uid://dh2b7qtgi6ih3" path="res://src/block_layers.gd" id="2_x0eed"]
 [ext_resource type="Texture2D" uid="uid://bkluo1u188bx0" path="res://assets/foliage.png" id="4_3xl1m"]
 [ext_resource type="PackedScene" uid="uid://cuw5q53ek5npe" path="res://scenes/entity_scenes/enemy_scenes/base_enemy.tscn" id="4_dtm67"]
-[ext_resource type="PackedScene" uid="uid://dbjh0x7lwu12q" path="res://scenes/static_scenes/trees/tree_01.tscn" id="6_3xl1m"]
+[ext_resource type="PackedScene" path="res://scenes/static_scenes/trees/tree_01.tscn" id="6_3xl1m"]
+[ext_resource type="PackedScene" uid="uid://xurjh5nitdfy" path="res://scenes/entity_scenes/altar.tscn" id="7_mlm16"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_x0eed"]
 
@@ -55,7 +56,7 @@ transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="player" unique_id=1466339472]
 transform = Transform3D(0.80369073, 0.21270281, -0.5557326, 0, 0.93393034, 0.35745537, 0.5950473, -0.2872836, 0.75059116, -2.3356647, 6.063675, 0)
-light_energy = 0.0
+light_energy = 0.31
 
 [node name="block layers" type="Node3D" parent="player" unique_id=765010059]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
@@ -99,3 +100,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.358156, 0, -7.4996243)
 transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -6.004, -0.5, 1.88)
 collision_layer = 4
 collision_mask = 0
+
+[node name="Altar" parent="." unique_id=1801325733 instance=ExtResource("7_mlm16")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -4.375343, 0.22902334, 9.202957)
