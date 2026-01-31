@@ -2,12 +2,17 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ito3270c1jbv"
-valid=false
+uid="uid://cjmqgs8o0arkx"
+path.s3tc="res://.godot/imported/main_floor.png-5be409dfc8899f38b82083de17e18c55.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
 
 [deps]
 
-source_file="res://assets/tree_pack_1.1/textures/bush01.png"
+source_file="res://assets/main_floor.png"
+dest_files=["res://.godot/imported/main_floor.png-5be409dfc8899f38b82083de17e18c55.s3tc.ctex"]
 
 [params]
 
