@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://c8a0aikc4dvjk" path="res://src/player.gd" id="1_3vyb7"]
 [ext_resource type="PackedScene" uid="uid://fq1ob5sfinn0" path="res://assets/temp_player.fbx" id="2_3pi36"]
 [ext_resource type="PackedScene" uid="uid://y2hmeob2fm8x" path="res://scenes/mini_masks/mini_test_mask.tscn" id="2_t81a4"]
+[ext_resource type="AudioStream" uid="uid://cn55s58kb6mnl" path="res://assets/music/pick_up_mask.mp3" id="4_rstlk"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_g2els"]
 
@@ -44,5 +45,8 @@ shape = SubResource("SphereShape3D_g2els")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1915515592]
 shape = SubResource("CapsuleShape3D_1x0ge")
+
+[node name="mask_get_sfx" type="AudioStreamPlayer3D" parent="." unique_id=304370969]
+stream = ExtResource("4_rstlk")
 
 [connection signal="body_entered" from="playerCollision" to="." method="_on_player_collision_body_entered"]

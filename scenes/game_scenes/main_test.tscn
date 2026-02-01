@@ -2,12 +2,14 @@
 
 [ext_resource type="Texture2D" uid="uid://cjmqgs8o0arkx" path="res://assets/main_floor.png" id="1_d3j5s"]
 [ext_resource type="PackedScene" uid="uid://bykxo2lthnfm6" path="res://scenes/entity_scenes/player.tscn" id="1_rko00"]
+[ext_resource type="Script" uid="uid://bd8p128g38ivx" path="res://src/main.gd" id="1_w1ghl"]
 [ext_resource type="Script" uid="uid://dh2b7qtgi6ih3" path="res://src/block_layers.gd" id="2_x0eed"]
 [ext_resource type="Texture2D" uid="uid://bkluo1u188bx0" path="res://assets/foliage.png" id="4_3xl1m"]
 [ext_resource type="PackedScene" uid="uid://cuw5q53ek5npe" path="res://scenes/entity_scenes/enemy_scenes/base_enemy.tscn" id="4_dtm67"]
 [ext_resource type="PackedScene" uid="uid://dbjh0x7lwu12q" path="res://scenes/static_scenes/trees/tree_01.tscn" id="6_3xl1m"]
 [ext_resource type="PackedScene" uid="uid://c3g2lv33220qo" path="res://scenes/entity_scenes/altar.tscn" id="7_mlm16"]
 [ext_resource type="PackedScene" uid="uid://d275gjv3m3exg" path="res://scenes/entity_scenes/mask_main.tscn" id="8_vekyt"]
+[ext_resource type="AudioStream" uid="uid://c27lnolyhomsk" path="res://assets/music/mask_game.mp3" id="10_knflu"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_x0eed"]
 
@@ -36,6 +38,7 @@ uv1_world_triplanar = true
 [sub_resource type="BoxShape3D" id="BoxShape3D_d3j5s"]
 
 [node name="MainTest" type="Node3D" unique_id=325605107]
+script = ExtResource("1_w1ghl")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=3157295]
 transform = Transform3D(20, 0, 0, 0, 1, 0, 0, 0, 20, 0, -0.5, 0)
@@ -107,3 +110,7 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -4.3
 
 [node name="MaskMain" parent="." unique_id=1065418499 instance=ExtResource("8_vekyt")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 9.909221)
+
+[node name="music_player" type="AudioStreamPlayer3D" parent="." unique_id=861214353]
+stream = ExtResource("10_knflu")
+volume_db = -15.136

@@ -97,4 +97,5 @@ func _on_player_collision_body_entered(body: Node3D) -> void:
 	if body.is_in_group("mask"):
 		masks.append(body.return_mask_type())
 		body.queue_free()
+		$mask_get_sfx.play()
 	pass # Replace with function body.
