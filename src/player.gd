@@ -21,9 +21,10 @@ func return_mask_list():
 func remove_mask(mask_name: String) -> void:
 	masks.erase(mask_name)
 
+func _process(delta: float) -> void:
+	process_mask()
+
 func _physics_process(delta: float) -> void:
-	var basic_mask_display = basic_mask.instantiate()
-	var web_mask_display = web_mask.instantiate()
 	
 	var direction = Vector3.ZERO
 	
@@ -66,23 +67,30 @@ func _physics_process(delta: float) -> void:
 	else: 
 		$AnimationPlayer.speed_scale = 1
 		
-	process_mask(basic_mask_display, web_mask_display)
 	
-func process_mask(mask1: Node, mask2: Node):
+func process_mask():
 	if masks.size() <= 0:
 		if !$pivot/mask_marker_1.get_children().is_empty():
+			is_displaying_basic_mask = false
 			for n in $pivot/mask_marker_1.get_children():
 				$pivot/mask_marker_1.remove_child(n)
 				n.queue_free()
 				
 	else:
 		if masks.has(basic_mask_label) and !is_displaying_basic_mask:
-			$pivot/mask_marker_1.add_child(mask1)
+			is_displaying_basic_mask = true
+			var basic_mask_display = basic_mask.instantiate()
+			$pivot/mask_marker_1.add_child(basic_mask_display)
 		elif !$pivot/mask_marker_1.get_children().is_empty():
+			is_displaying_basic_mask = false
 			for n in $pivot/mask_marker_1.get_children():
 				$pivot/mask_marker_1.remove_child(n)
 				n.queue_free()
 			
+	if is_displaying_basic_mask:
+		speed = 12
+	else:
+		speed = 4
 
 func _on_player_collision_body_entered(body: Node3D) -> void:
 	#mask check
