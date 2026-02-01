@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://y2hmeob2fm8x"]
 
-[ext_resource type="PackedScene" uid="uid://beao1os5jf7oq" path="res://assets/ggj-2026-basic-mask.fbx" id="1_aker8"]
+[ext_resource type="PackedScene" uid="uid://8ncayhmmux27" path="res://assets/mask_default.fbx" id="1_aker8"]
 
 [node name="MiniTestMask" type="Node3D" unique_id=992696958]
 
-[node name="ggj-2026-basic-mask" parent="." unique_id=2005767622 instance=ExtResource("1_aker8")]
-transform = Transform3D(0.14142136, -0.14142136, 0, 0.14142136, 0.14142136, 0, 0, 0, 0.2, 0, 0, 0)
+[node name="mask_default" parent="." unique_id=448149791 instance=ExtResource("1_aker8")]
+transform = Transform3D(-4.371139e-08, 0.70710677, 0.70710677, 0, 0.70710677, -0.70710677, -1, -3.090862e-08, -3.090862e-08, 0, 0, 0)

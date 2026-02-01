@@ -47,5 +47,4 @@ func _process(delta: float) -> void:
 func spawn_mask():
 	var mask_container = mask_model.instantiate()
 	add_child(mask_container)
-	mask_container.position = mask_placement.position
 	$altar_place.play()
