@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://csck26dc55l7x"]
+
+[ext_resource type="PackedScene" uid="uid://bajfh813urqo2" path="res://assets/test-web.fbx" id="1_anr5o"]
+[ext_resource type="Script" uid="uid://dytrm4agwp7vx" path="res://src/web.gd" id="1_ooc2k"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ooc2k"]
+height = 0.52275085
+
+[node name="Web" type="Area3D" unique_id=1607337097 groups=["web"]]
+script = ExtResource("1_ooc2k")
+
+[node name="test-web" parent="." unique_id=1518904675 instance=ExtResource("1_anr5o")]
+transform = Transform3D(0.7, 0, 0, 0, 0.5, 0, 0, 0, 0.7, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1092004663]
+transform = Transform3D(3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.16684723, 0)
+shape = SubResource("CylinderShape3D_ooc2k")

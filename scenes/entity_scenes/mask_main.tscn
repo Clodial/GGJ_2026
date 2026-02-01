@@ -1,3 +1,24 @@
 [gd_scene format=3 uid="uid://d275gjv3m3exg"]
 
-[node name="MaskMain" type="StaticBody3D" unique_id=1065418499]
+[ext_resource type="Script" uid="uid://7lyc6bopklkl" path="res://src/mask_main.gd" id="1_kain3"]
+[ext_resource type="PackedScene" uid="uid://8ncayhmmux27" path="res://assets/mask_default.fbx" id="2_kain3"]
+
+[sub_resource type="TextMesh" id="TextMesh_lhol2"]
+text = "Basic Mask"
+font_size = 40
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_3t4ec"]
+
+[node name="MaskMain" type="StaticBody3D" unique_id=1065418499 groups=["mask"]]
+collision_layer = 2
+script = ExtResource("1_kain3")
+
+[node name="maskText" type="MeshInstance3D" parent="." unique_id=1454474837]
+transform = Transform3D(-4.371139e-08, -0.70710677, 0.70710677, 0, 0.70710677, 0.70710677, -1, 3.090862e-08, -3.090862e-08, 0.5, 0, 0)
+mesh = SubResource("TextMesh_lhol2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1768551506]
+shape = SubResource("SphereShape3D_3t4ec")
+
+[node name="mask_default" parent="." unique_id=448149791 instance=ExtResource("2_kain3")]
+transform = Transform3D(-4.371139e-08, 0.70710677, 0.70710677, 0, 0.70710677, -0.70710677, -1, -3.090862e-08, -3.090862e-08, 0, 0, 0)

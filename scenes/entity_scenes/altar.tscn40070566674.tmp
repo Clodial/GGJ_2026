@@ -1,8 +1,6 @@
 [gd_scene format=4 uid="uid://c3g2lv33220qo"]
 
 [ext_resource type="Script" uid="uid://bjiew6s2g6250" path="res://src/altar.gd" id="1_gahxd"]
-[ext_resource type="PackedScene" uid="uid://y2hmeob2fm8x" path="res://scenes/mini_masks/mini_test_mask.tscn" id="2_lcrwp"]
-[ext_resource type="AudioStream" uid="uid://cp8vv81hfti7d" path="res://assets/music/place_on_altar.mp3" id="3_mtqa5"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jusb8"]
 resource_name = "Material"
@@ -49,16 +47,11 @@ shadow_mesh = SubResource("ArrayMesh_rjjv7")
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_lcrwp"]
 
 [sub_resource type="TextMesh" id="TextMesh_gahxd"]
-text = "press [E] to 
-give mask"
-font_size = 50
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gahxd"]
+text = "press [E] to give mask"
 
 [node name="Altar" type="StaticBody3D" unique_id=1801325733]
 collision_layer = 4
 script = ExtResource("1_gahxd")
-mask_model = ExtResource("2_lcrwp")
 
 [node name="Cube" type="MeshInstance3D" parent="." unique_id=439507158]
 transform = Transform3D(60, 0, 0, 0, -2.6226833e-06, 60, 0, -60, -2.6226833e-06, 0, -0.1, 0)
@@ -71,15 +64,10 @@ shape = SubResource("BoxShape3D_0y71v")
 [node name="MaskMarker" type="Marker3D" parent="." unique_id=1114573986]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
 
-[node name="playerRadius" type="ShapeCast3D" parent="." unique_id=140139061]
+[node name="playerRadius" type="CollisionShape3D" parent="." unique_id=632941616]
 transform = Transform3D(3, 0, 0, 0, 0.1, 0, 0, 0, 3, 0, 0, 0)
 shape = SubResource("CylinderShape3D_lcrwp")
 
 [node name="maskInstruction" type="MeshInstance3D" parent="." unique_id=1032868477]
 transform = Transform3D(-4.371139e-08, -0.70710677, 0.70710677, 0, 0.70710677, 0.70710677, -1, 3.090862e-08, -3.090862e-08, 0.69675654, 0.6612706, 0)
 mesh = SubResource("TextMesh_gahxd")
-surface_material_override/0 = SubResource("StandardMaterial3D_gahxd")
-
-[node name="altar_place" type="AudioStreamPlayer3D" parent="." unique_id=1077034473]
-stream = ExtResource("3_mtqa5")
-volume_db = -15.0

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dne7mdxxsqxt6"
-path="res://.godot/imported/tree01.fbx-478c1a83e84977f3d02e3bdef6545fba.scn"
+uid="uid://beao1os5jf7oq"
+path="res://.godot/imported/ggj-2026-basic-mask.fbx-95e256856fc244025c7c3eb382a01e16.scn"
 
 [deps]
 
-source_file="res://assets/tree_pack_1.1/models/tree01.fbx"
-dest_files=["res://.godot/imported/tree01.fbx-478c1a83e84977f3d02e3bdef6545fba.scn"]
+source_file="res://assets/ggj-2026-basic-mask.fbx"
+dest_files=["res://.godot/imported/ggj-2026-basic-mask.fbx-95e256856fc244025c7c3eb382a01e16.scn"]
 
 [params]
 
@@ -34,18 +34,10 @@ animation/trimming=true
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-materials/extract=1
-materials/extract_format=2
-materials/extract_path="res://assets/tree_pack_1.1/materials"
-_subresources={
-"materials": {
-"tree01": {
-"use_external/enabled": true,
-"use_external/fallback_path": "res://assets/tree_pack_1.1/materials/tree01.material",
-"use_external/path": "uid://c7jpn44i03yuw"
-}
-}
-}
+materials/extract=0
+materials/extract_format=0
+materials/extract_path=""
+_subresources={}
 fbx/importer=0
 fbx/allow_geometry_helper_nodes=false
 fbx/embedded_image_handling=1
