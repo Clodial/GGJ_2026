@@ -32,9 +32,9 @@ func _process(delta: float) -> void:
 		player_in_range = false
 		
 	if player_in_range:
-		if !has_mask:
+		if !has_mask and incoming_collider.return_mask_list().has(need_mask):
 			instructions.visible = true
-			if Input.is_action_just_pressed("action") and incoming_collider != null and incoming_collider.return_mask_list().has(need_mask):
+			if Input.is_action_just_pressed("action") and incoming_collider != null:
 				incoming_collider.remove_mask(need_mask)
 				has_mask = true
 				spawn_mask()

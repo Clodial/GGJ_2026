@@ -1,6 +1,12 @@
 extends CharacterBody3D
 
 @export var speed = 4
+@export var basic_mask: PackedScene
+@export var basic_mask_label = "basic"
+var is_displaying_basic_mask = false
+@export var web_mask: PackedScene
+@export var web_mask_label = "web"
+var is_displaying_web_mask = false
 
 var target_velocity = Vector3.ZERO
 var masks = []
@@ -16,6 +22,9 @@ func remove_mask(mask_name: String) -> void:
 	masks.erase(mask_name)
 
 func _physics_process(delta: float) -> void:
+	var basic_mask_display = basic_mask.instantiate()
+	var web_mask_display = web_mask.instantiate()
+	
 	var direction = Vector3.ZERO
 	
 	var horizontal_direction = Input.get_axis("move_left", "move_right")
@@ -56,6 +65,24 @@ func _physics_process(delta: float) -> void:
 		$AnimationPlayer.speed_scale = 4
 	else: 
 		$AnimationPlayer.speed_scale = 1
+		
+	process_mask(basic_mask_display, web_mask_display)
+	
+func process_mask(mask1: Node, mask2: Node):
+	if masks.size() <= 0:
+		if !$pivot/mask_marker_1.get_children().is_empty():
+			for n in $pivot/mask_marker_1.get_children():
+				$pivot/mask_marker_1.remove_child(n)
+				n.queue_free()
+				
+	else:
+		if masks.has(basic_mask_label) and !is_displaying_basic_mask:
+			$pivot/mask_marker_1.add_child(mask1)
+		elif !$pivot/mask_marker_1.get_children().is_empty():
+			for n in $pivot/mask_marker_1.get_children():
+				$pivot/mask_marker_1.remove_child(n)
+				n.queue_free()
+			
 
 func _on_player_collision_body_entered(body: Node3D) -> void:
 	#mask check

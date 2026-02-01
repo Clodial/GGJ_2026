@@ -5,4 +5,4 @@
 [node name="MiniTestMask" type="Node3D" unique_id=992696958]
 
 [node name="ggj-2026-basic-mask" parent="." unique_id=2005767622 instance=ExtResource("1_aker8")]
-transform = Transform3D(0.07071068, -0.07071068, 0, 0.07071068, 0.07071068, 0, 0, 0, 0.1, 0, 0, 0)
+transform = Transform3D(0.14142136, -0.14142136, 0, 0.14142136, 0.14142136, 0, 0, 0, 0.2, 0, 0, 0)
