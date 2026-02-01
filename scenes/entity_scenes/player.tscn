@@ -8,8 +8,10 @@
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_g2els"]
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1x0ge"]
+
 [node name="player" type="CharacterBody3D" unique_id=2117555441 groups=["player"]]
-collision_mask = 6
+collision_mask = 4
 script = ExtResource("1_3vyb7")
 
 [node name="pivot" type="Node3D" parent="." unique_id=1746906775]
@@ -18,7 +20,26 @@ script = ExtResource("1_3vyb7")
 mesh = SubResource("BoxMesh_3vyb7")
 surface_material_override/0 = SubResource("StandardMaterial3D_1x0ge")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=346046991]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=790058329]
+
+[node name="playerCollision" type="Area3D" parent="." unique_id=542928636]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="playerCollision" unique_id=346046991]
 shape = SubResource("SphereShape3D_g2els")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=790058329]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1915515592]
+shape = SubResource("CapsuleShape3D_1x0ge")
+
+[node name="mask_marker_1" type="Marker3D" parent="." unique_id=1313099215]
+
+[node name="mask_marker_2" type="Marker3D" parent="." unique_id=619741097]
+
+[node name="mask_marker_3" type="Marker3D" parent="." unique_id=1185265791]
+
+[node name="mask_marker_4" type="Marker3D" parent="." unique_id=386943465]
+
+[node name="mask_marker_5" type="Marker3D" parent="." unique_id=1983367528]
+
+[connection signal="body_entered" from="playerCollision" to="." method="_on_player_collision_body_entered"]

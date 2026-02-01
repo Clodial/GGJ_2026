@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://y2hmeob2fm8x"]
+
+[ext_resource type="PackedScene" uid="uid://beao1os5jf7oq" path="res://assets/ggj-2026-basic-mask.fbx" id="1_aker8"]
+
+[node name="MiniTestMask" type="Node3D" unique_id=992696958]
+
+[node name="ggj-2026-basic-mask" parent="." unique_id=2005767622 instance=ExtResource("1_aker8")]
+transform = Transform3D(0.07071068, -0.07071068, 0, 0.07071068, 0.07071068, 0, 0, 0, 0.1, 0, 0, 0)
