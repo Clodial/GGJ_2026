@@ -82,3 +82,4 @@ surface_material_override/0 = SubResource("StandardMaterial3D_gahxd")
 
 [node name="altar_place" type="AudioStreamPlayer3D" parent="." unique_id=1077034473]
 stream = ExtResource("3_mtqa5")
+volume_db = -15.0

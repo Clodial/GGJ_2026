@@ -48,5 +48,6 @@ shape = SubResource("CapsuleShape3D_1x0ge")
 
 [node name="mask_get_sfx" type="AudioStreamPlayer3D" parent="." unique_id=304370969]
 stream = ExtResource("4_rstlk")
+volume_db = -16.216
 
 [connection signal="body_entered" from="playerCollision" to="." method="_on_player_collision_body_entered"]
