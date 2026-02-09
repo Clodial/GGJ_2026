@@ -55,12 +55,12 @@ surface_material_override/0 = SubResource("StandardMaterial3D_x0eed")
 [node name="CameraPivot" type="Marker3D" parent="player" unique_id=14022889]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.730854, 3.9008636)
 
-[node name="Camera3D" type="Camera3D" parent="player/CameraPivot" unique_id=1885345082]
-transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 2.5, 0)
-
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="player" unique_id=1466339472]
 transform = Transform3D(0.80369073, 0.21270281, -0.5557326, 0, 0.93393034, 0.35745537, 0.5950473, -0.2872836, 0.75059116, -2.3356647, 6.063675, 0)
-light_energy = 0.31
+light_energy = 0.0
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
+light_specular = 0.0
 
 [node name="block layers" type="Node3D" parent="player" unique_id=765010059]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
@@ -68,6 +68,10 @@ script = ExtResource("2_x0eed")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="player/block layers" unique_id=1886417113]
 transform = Transform3D(-4.371139e-07, -1, 0, 10, -4.371139e-08, 0, 0, 0, 8, -4, 2.505, 0)
+mesh = SubResource("BoxMesh_x0eed")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="player/block layers" unique_id=1587782789]
+transform = Transform3D(-10, 1.509958e-07, 0, -1.509958e-06, -1, 0, 0, 0, 10, -0.4825945, 7.0045605, -0.6808286)
 mesh = SubResource("BoxMesh_x0eed")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="player/block layers" unique_id=791034910]
@@ -101,7 +105,7 @@ shape = SubResource("BoxShape3D_d3j5s")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.358156, 0, -7.4996243)
 
 [node name="tree01" parent="." unique_id=1165344659 instance=ExtResource("6_3xl1m")]
-transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -6.004, -0.5, 1.88)
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -8.597842, -0.5, 1.88)
 collision_layer = 4
 collision_mask = 0
 
@@ -113,4 +117,4 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0
 
 [node name="music_player" type="AudioStreamPlayer3D" parent="." unique_id=861214353]
 stream = ExtResource("10_knflu")
-volume_db = -15.136
+volume_db = -80.0
