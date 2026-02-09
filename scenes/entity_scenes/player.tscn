@@ -37,7 +37,10 @@ transform = Transform3D(1, 0, 0, 0, 0.7408632, 0.67165595, 0, -0.67165595, 0.740
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6526948, 0.5471027)
 
 [node name="Camera3D" type="Camera3D" parent="pivot" unique_id=759588288]
-transform = Transform3D(1, 0, 0, 0, 0.9063078, 0.4226183, 0, -0.4226183, 0.9063078, 0, 2.7258892, 1.591898)
+transform = Transform3D(1, 0, 0, 0, 0.9063078, 0.4226183, 0, -0.4226183, 0.9063078, 0, 2.7, 1.592)
+
+[node name="back_camera_marker" type="Marker3D" parent="pivot" unique_id=1745513736]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.7, -1.6658888)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=790058329]
 
