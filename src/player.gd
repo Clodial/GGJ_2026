@@ -11,14 +11,20 @@ var is_displaying_basic_mask = false
 var is_displaying_web_mask = false
 @export var is_tank_controls = true
 
+var backCamera
+var mainCamera
 
 var target_velocity = Vector3.ZERO
 var masks = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
-
+	backCamera = $pivot/backCamera
+	mainCamera = $pivot/mainCamera
+	mainCamera.make_current()
+	backCamera.current = false
+	pass
+	
 func return_mask_list():
 	return masks
 
@@ -34,6 +40,15 @@ func _physics_process(delta: float) -> void:
 	
 	var horizontal_direction = Input.get_axis("move_left", "move_right")
 	var vertical_direction = Input.get_axis("move_up", "move_down")
+	
+	if Input.is_action_pressed("move_down"):
+		if backCamera.current != true:
+			mainCamera.clear_current()
+			backCamera.make_current()
+	elif Input.is_action_pressed("move_up"):
+		if mainCamera.current != true:
+			backCamera.clear_current()
+			mainCamera.make_current()
 	
 	#basic tank input movement
 	if is_tank_controls:
@@ -123,10 +138,11 @@ func process_mask():
 				n.queue_free()
 				
 	else:
-		if masks.has(basic_mask_label) and !is_displaying_basic_mask:
-			is_displaying_basic_mask = true
-			var basic_mask_display = basic_mask.instantiate()
-			$pivot/mask_marker_1.add_child(basic_mask_display)
+		if masks.has(basic_mask_label):
+			if !is_displaying_basic_mask:
+				is_displaying_basic_mask = true
+				var basic_mask_display = basic_mask.instantiate()
+				$pivot/mask_marker_1.add_child(basic_mask_display)
 		elif !$pivot/mask_marker_1.get_children().is_empty():
 			is_displaying_basic_mask = false
 			for n in $pivot/mask_marker_1.get_children():

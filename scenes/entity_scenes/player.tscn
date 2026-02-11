@@ -5,10 +5,17 @@
 [ext_resource type="PackedScene" uid="uid://8ncayhmmux27" path="res://assets/mask_default.fbx" id="2_pbfi6"]
 [ext_resource type="PackedScene" uid="uid://ctpgku4xu4d33" path="res://assets/mask_spider.fbx" id="3_g26bb"]
 [ext_resource type="AudioStream" uid="uid://cn55s58kb6mnl" path="res://assets/music/pick_up_mask.mp3" id="4_rstlk"]
+[ext_resource type="Script" uid="uid://dh2b7qtgi6ih3" path="res://src/block_layers.gd" id="6_g26bb"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_g2els"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1x0ge"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rko00"]
+albedo_color = Color(0.012617188, 0.012617188, 0.012617188, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_0q853"]
+material = SubResource("StandardMaterial3D_rko00")
 
 [node name="player" type="CharacterBody3D" unique_id=2117555441 groups=["player"]]
 collision_mask = 4
@@ -36,11 +43,11 @@ transform = Transform3D(1, 0, 0, 0, 0.7408632, 0.67165595, 0, -0.67165595, 0.740
 [node name="mask_marker_5" type="Marker3D" parent="pivot" unique_id=1983367528]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6526948, 0.5471027)
 
-[node name="Camera3D" type="Camera3D" parent="pivot" unique_id=759588288]
-transform = Transform3D(1, 0, 0, 0, 0.9063078, 0.4226183, 0, -0.4226183, 0.9063078, 0, 2.7, 1.592)
+[node name="mainCamera" type="Camera3D" parent="pivot" unique_id=759588288]
+transform = Transform3D(1, 0, 0, 0, 0.9063078, 0.4226183, 0, -0.4226183, 0.9063078, 0, 2.7, 3)
 
-[node name="back_camera_marker" type="Marker3D" parent="pivot" unique_id=1745513736]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.7, -1.6658888)
+[node name="backCamera" type="Camera3D" parent="pivot" unique_id=2025147866]
+transform = Transform3D(-1, -3.6946464e-08, 7.923194e-08, 0, 0.90630776, 0.42261827, -8.742278e-08, 0.42261827, -0.90630776, 0, 2.7, -3)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=790058329]
 
@@ -57,5 +64,29 @@ shape = SubResource("CapsuleShape3D_1x0ge")
 [node name="mask_get_sfx" type="AudioStreamPlayer3D" parent="." unique_id=304370969]
 stream = ExtResource("4_rstlk")
 volume_db = -80.0
+
+[node name="block layers" type="Node3D" parent="." unique_id=2093342898]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+script = ExtResource("6_g26bb")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="block layers" unique_id=930178002]
+transform = Transform3D(-4.371139e-07, -1, 0, 10, -4.371139e-08, 0, 0, 0, 8, -4, 2.505, 0)
+mesh = SubResource("BoxMesh_0q853")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="block layers" unique_id=2048884750]
+transform = Transform3D(-10, 1.509958e-07, 0, -1.509958e-06, -1, 0, 0, 0, 10, -0.4825945, 7.0045605, -0.6808286)
+mesh = SubResource("BoxMesh_0q853")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="block layers" unique_id=1650719842]
+transform = Transform3D(1.9106854e-14, 4.371139e-08, 8, 10, -4.371139e-08, 0, 4.371139e-07, 1, -3.496911e-07, 0, 2.505, 4)
+mesh = SubResource("BoxMesh_0q853")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="block layers" unique_id=1734024265]
+transform = Transform3D(-4.371139e-07, -1, 0, 10, -4.371139e-08, 0, 0, 0, 8, 4, 2.505, 0)
+mesh = SubResource("BoxMesh_0q853")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="block layers" unique_id=591935272]
+transform = Transform3D(1.9106854e-14, 4.371139e-08, 8, 10, -4.371139e-08, 0, 4.371139e-07, 1, -3.496911e-07, 0, 2.505, -4)
+mesh = SubResource("BoxMesh_0q853")
 
 [connection signal="body_entered" from="playerCollision" to="." method="_on_player_collision_body_entered"]
