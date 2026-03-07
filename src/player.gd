@@ -91,6 +91,15 @@ func _physics_process(delta: float) -> void:
 			rotation.z = clamp(rotation.x, -50, 90)
 			rotation.y -= direction.y + turnSpeed
 		
+		elif Input.is_action_pressed("strafe_left"):
+			var sideVector = -Vector3.LEFT.rotated(Vector3.UP, rotation.y)
+			velocity = -sideVector * backSpeed
+			
+		elif Input.is_action_pressed("strafe_right"):
+			var sideVector = Vector3.LEFT.rotated(Vector3.UP, rotation.y)
+			velocity = -sideVector * backSpeed
+		
+		
 	else:
 		if horizontal_direction:
 			velocity.x = speed * horizontal_direction
