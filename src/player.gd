@@ -52,7 +52,7 @@ func _physics_process(delta: float) -> void:
 	
 	#basic tank input movement
 	if is_tank_controls:
-		if Input.is_action_pressed("move_forward") and Input.is_action_pressed("move_back"):
+		if Input.is_action_pressed("move_up") and Input.is_action_pressed("move_back"):
 			velocity.x = 0
 			velocity.z = 0
 
