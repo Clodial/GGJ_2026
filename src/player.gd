@@ -52,7 +52,7 @@ func _physics_process(delta: float) -> void:
 	
 	#basic tank input movement
 	if is_tank_controls:
-		if Input.is_action_pressed("move_up") and Input.is_action_pressed("move_back"):
+		if Input.is_action_pressed("move_up") and Input.is_action_pressed("move_down"):
 			velocity.x = 0
 			velocity.z = 0
 
@@ -70,7 +70,7 @@ func _physics_process(delta: float) -> void:
 			velocity.z = 0
 		
 		# IF turn left WHILE moving back, turn right
-		if Input.is_action_pressed("move_left") and Input.is_action_pressed("move_back"):
+		if Input.is_action_pressed("move_left") and Input.is_action_pressed("move_down"):
 			rotation.z -= direction.y + turnSpeed
 			rotation.z = clamp(rotation.x, -50, 90)
 			rotation.y -= direction.y + turnSpeed
@@ -81,7 +81,7 @@ func _physics_process(delta: float) -> void:
 			rotation.y += direction.y + turnSpeed
 
 		# IF turn right WHILE moving back, turn left
-		if Input.is_action_pressed("move_right") and Input.is_action_pressed("move_back"):
+		if Input.is_action_pressed("move_right") and Input.is_action_pressed("move_down"):
 			rotation.z += direction.y - turnSpeed
 			rotation.z = clamp(rotation.x, -50, 90)
 			rotation.y += direction.y + turnSpeed
