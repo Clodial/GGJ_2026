@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cmbw6fjv6613l"]
+
+[ext_resource type="Script" uid="uid://buoqi577r4jp1" path="res://src/bullet.gd" id="1_cnt20"]
+[ext_resource type="PackedScene" uid="uid://cu8vsobb23tse" path="res://assets/test-shot.fbx" id="1_m5pdh"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_cnt20"]
+radius = 0.22902389
+
+[node name="Bullet" type="Area3D" unique_id=621540927 groups=["bullet"]]
+script = ExtResource("1_cnt20")
+
+[node name="test-shot" parent="." unique_id=784615212 instance=ExtResource("1_m5pdh")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=743811955]
+shape = SubResource("SphereShape3D_cnt20")
