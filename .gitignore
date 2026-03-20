@@ -1,10 +1,28 @@
-# Godot 4+ specific ignores
+# Godot cache and build artifacts
 .godot/
+.import/
 /android/
+/build/
+/export/
 
-# OS/editor files
+# Godot editor temporary scene files
+*.tmp
+*.tscn*.tmp
+
+# C# and Mono artifacts (if enabled)
+/.mono/
+*.csproj
+*.sln
+*.user
+
+# OS and editor files
 .DS_Store
+Thumbs.db
 .vscode/
+.idea/
+*.swp
+*.swo
+*~
 
 # Local tools (optional)
 tools/
